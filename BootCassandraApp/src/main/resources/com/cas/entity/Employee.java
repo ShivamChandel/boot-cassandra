@@ -1,3 +1,8 @@
+/**
+ * Author: Shivam_Chandel
+ * Comments: The entity/table class
+ */
+
 package com.cas.entity;
 
 import java.io.Serializable;
@@ -15,6 +20,10 @@ public class Employee implements Serializable {
 	private String empName;
 	private String empUnit;
 	private double salary;
+
+	public Employee() {
+
+	}
 
 	public Employee(Integer empId, String empName, String empUnit, double salary) {
 		super();

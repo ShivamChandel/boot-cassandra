@@ -1,3 +1,8 @@
+/**
+ * Author: Shivam_Chandel
+ * Comments: Implementation class of business logic
+ */
+
 package com.cas.service;
 
 import java.util.List;
@@ -15,11 +20,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	EmployeeRepository employeeRepository;
 
 	public List<Employee> getAllEmployees() {
+
 		return employeeRepository.findAll();
 	}
 
 	public void deleteEmployee(Integer empId) {
-		// we can use try-catch here and return success message when deleted
+
 		employeeRepository.deleteById(empId);
 
 	}
