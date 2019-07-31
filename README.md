@@ -1,12 +1,10 @@
 # boot-cassandra
 
 #PREREQUISITE.
-
-SetUp Cassandra DB local instance and launch it, before running boot application
+SetUp Cassandra DB local instance and launch it, before running boot application.  
 Reference URL : https://downloads.datastax.com/#ddac
 
 #STARTING the spring boot application.
-
 1)Go to file in package com.cas.config.CassandraApplication.java -> Right click -> run as -> Java application
 
 OR
