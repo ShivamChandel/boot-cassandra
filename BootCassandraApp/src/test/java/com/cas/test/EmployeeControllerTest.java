@@ -75,11 +75,23 @@ public class EmployeeControllerTest {
 	@Test
 	public void deleteEmployeeTest() throws Exception {
 
+		RequestBuilder requestBuilderDelete = MockMvcRequestBuilders.delete("/cas/deleteEmployee/{id}", "4")
+				.accept(MediaType.APPLICATION_JSON);
+		mvcResult = mockMvc.perform(requestBuilderDelete).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+		System.out.println("The status of the DELETE test case : " + mvcResult.getResponse().getStatus());
+		Assert.assertTrue("DELETE test case passed", mvcResult.getResponse().getStatus() == 200);
 	}
 
 	@Test
 	public void updateEmployeeTest() throws Exception {
 
+		Employee updatedEmp = new Employee(1, "updatedName", "updatedUnit", 60000);
+		String responseBody = objectMapper.writeValueAsString(updatedEmp);
+		RequestBuilder requestBuilderPut = MockMvcRequestBuilders.put("/cas/updateEmployee/{id}", "1")
+				.content(responseBody).accept(MediaType.APPLICATION_JSON);
+		mvcResult = mockMvc.perform(requestBuilderPut).andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+		System.out.println("The status of the PUT test case : " + mvcResult.getResponse().getStatus());
+		Assert.assertTrue("PUT test case passed", mvcResult.getResponse().getStatus() == 200);
 	}
 
 }
